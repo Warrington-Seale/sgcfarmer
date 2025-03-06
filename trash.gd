@@ -26,7 +26,7 @@ func _on_killtrash_pressed() -> void:
 	Global.currroll = Global.roll()
 	print(Global.currroll)
 	warrname.text = '%s \n<MULGORE MILKERS>'%Global.playername
-
+	#Global.currroll = 1 ############################## 
 	if Global.currroll<=Global.b1chance :
 		boss.texture = load('res://assets/graphics/pixelart/models/bossorc.png')
 		lego.visible = 1

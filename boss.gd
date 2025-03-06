@@ -27,6 +27,7 @@ func resetscreen() -> void:
 	resetbutton.visible = 0
 
 func _on_killboss_pressed() -> void:
+	$yay/yaytext.text = 'Congratulations, %s\nYou\'ve done it! The grind is over!\n\nPlease mind that the number of tries You got\n is an official prediction of Div\n for You dropping SGC in game.\n Love, ~Div'%Global.playername
 		## when killboss button pressed, start animation, hide killboss button, wait for 3s and display lootboss button and increase tries by 1
 	#start animation
 	killbossbutton.visible = 0
@@ -74,7 +75,7 @@ func _on_lootbnoss_pressed() -> void:
 	
 	if Global.boss == 'orc':
 		Global.lootroll = Global.roll()
-		#Global.lootroll =1
+		#Global.lootroll =1 #################
 		if Global.lootroll <= 136:
 			$lootframe/looticon.texture = load('res://assets/graphics/pixelart/loot/orcsgc.png')
 			$lootframe/lootname.text = 'fucking SGC'
