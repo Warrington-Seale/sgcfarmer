@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://wfecy861k1j7"]
+[gd_scene load_steps=40 format=3 uid="uid://wfecy861k1j7"]
 
 [ext_resource type="Script" uid="uid://c7a0gtp6as6gl" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://detugviwhjvqc" path="res://hud.gd" id="2_1bvp3"]
@@ -21,13 +21,38 @@
 [ext_resource type="Texture2D" uid="uid://bxdihhdhghag4" path="res://assets/graphics/pixelart/models/boss1.png" id="9_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cpb37vo6atkk7" path="res://assets/graphics/pixelart/effects/ww.png" id="10_yaehf"]
 [ext_resource type="Script" uid="uid://re3yb0tng8iw" path="res://arenadwarf.gd" id="13_ryguw"]
+[ext_resource type="AudioStream" uid="uid://bfexh2sjx2ib7" path="res://assets/sounds/run.ogg" id="13_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://cd8ui67cmb58j" path="res://assets/graphics/pixelart/ms.png" id="14_074og"]
 [ext_resource type="Script" uid="uid://dbbmbvmpsd3ta" path="res://trash.gd" id="15_d13ii"]
+[ext_resource type="AudioStream" uid="uid://bgho2hf1lukst" path="res://assets/sounds/dwarf.ogg" id="17_qsp4k"]
 [ext_resource type="Script" uid="uid://c4cofkqeml3us" path="res://boss.gd" id="21_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://dmmb8j48jmqut" path="res://assets/graphics/bubble.png" id="22_0odxb"]
+[ext_resource type="AudioStream" uid="uid://bw8pit0u3hruc" path="res://assets/sounds/hw.ogg" id="24_htxhm"]
+[ext_resource type="AudioStream" uid="uid://c1cirlepqhg8x" path="res://assets/sounds/hwland.ogg" id="25_jq2sk"]
+[ext_resource type="AudioStream" uid="uid://dkgbp2ksgl14c" path="res://assets/sounds/ww.ogg" id="26_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://ythimkf6wrhh" path="res://assets/graphics/pixelart/lootframe.png" id="26_lswn8"]
+[ext_resource type="Texture2D" uid="uid://dai2acunlggm5" path="res://assets/graphics/pixelart/loot/orc2.png" id="27_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://bfbmcfj1opn5s" path="res://assets/graphics/pixelart/exe.png" id="30_0rl1p"]
+[ext_resource type="AudioStream" uid="uid://bwhio4vrlxsic" path="res://assets/sounds/ms.ogg" id="34_ok6jj"]
+[ext_resource type="AudioStream" uid="uid://pb26y15w1qoq" path="res://assets/sounds/exe.ogg" id="35_facbu"]
 
 [sub_resource type="Theme" id="Theme_7mycd"]
 default_font = ExtResource("3_lquwl")
 default_font_size = 60
+
+[sub_resource type="Curve2D" id="Curve2D_0odxb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 131, 585, 0, 0, 0, 0, 162, 583, 0, 0, 0, 0, 183, 569, 0, 0, 0, 0, 217, 576, 0, 0, 0, 0, 241, 592, 0, 0, 0, 0, 247, 606, 0, 0, 0, 0, 284, 588, 0, 0, 0, 0, 311, 568, 0, 0, 0, 0, 345, 572, 0, 0, 0, 0, 375, 592, 0, 0, 0, 0, 388, 608, 0, 0, 0, 0, 412, 602, 0, 0, 0, 0, 428, 599, 0, 0, 0, 0, 456, 579, 0, 0, 0, 0, 496, 575, 0, 0, 0, 0, 527, 591, 0, 0, 0, 0, 543, 608, 0, 0, 0, 0, 571, 596, 0, 0, 0, 0, 602, 581)
+}
+point_count = 19
+
+[sub_resource type="Curve2D" id="Curve2D_lswn8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 126, 742, 0, 0, 0, 0, 178, 709, 0, 0, 0, 0, 189, 734, 0, 0, 0, 0, 213, 742, 0, 0, 0, 0, 237, 741, 0, 0, 0, 0, 262, 722, 0, 0, 0, 0, 279, 708, 0, 0, 0, 0, 316, 720, 0, 0, 0, 0, 349, 717, 0, 0, 0, 0, 354, 738, 0, 0, 0, 0, 362, 749, 0, 0, 0, 0, 380, 742, 0, 0, 0, 0, 412, 723, 0, 0, 0, 0, 432, 705, 0, 0, 0, 0, 494, 689, 0, 0, 0, 0, 536, 667, 0, 0, 0, 0, 561, 659)
+}
+point_count = 17
+
+[sub_resource type="ImageTexture" id="ImageTexture_1u8w0"]
 
 [node name="Main" type="Node" node_paths=PackedStringArray("trieslabel", "user_interface")]
 script = ExtResource("1_h2yge")
@@ -67,10 +92,10 @@ script = ExtResource("5_cegan")
 user_interface = NodePath("..")
 
 [node name="letsgoo" type="Button" parent="UI/welcome"]
-offset_left = 60.0
-offset_top = 989.0
-offset_right = 528.0
-offset_bottom = 1146.0
+offset_left = 119.0
+offset_top = 1015.0
+offset_right = 587.0
+offset_bottom = 1172.0
 theme_override_colors/icon_hover_color = Color(0.288518, 0.288518, 0.288518, 1)
 theme_override_fonts/font = ExtResource("3_lquwl")
 theme_override_font_sizes/font_size = 56
@@ -142,7 +167,7 @@ offset_right = 558.0
 offset_bottom = 807.0
 theme_override_fonts/font = ExtResource("6_yaehf")
 theme_override_font_sizes/font_size = 66
-placeholder_text = "Durkur"
+text = "Durkur"
 
 [node name="startgrind" type="Button" parent="UI/whatname"]
 offset_left = 122.0
@@ -156,25 +181,14 @@ theme_override_styles/normal = ExtResource("4_2cqfq")
 text = "Let's get grinding!"
 
 [node name="enterance" type="Node2D" parent="UI" node_paths=PackedStringArray("user_interface")]
-visible = false
 script = ExtResource("9_getpj")
 view = 2
 user_interface = NodePath("..")
-
-[node name="sham" type="Sprite2D" parent="UI/enterance"]
-position = Vector2(151.375, 811.644)
-scale = Vector2(2.26339, 2.20023)
-texture = ExtResource("6_efxa6")
 
 [node name="portal" type="Sprite2D" parent="UI/enterance"]
 position = Vector2(562, 627)
 scale = Vector2(1.54576, 4.1548)
 texture = ExtResource("5_w48qg")
-
-[node name="warr" type="Sprite2D" parent="UI/enterance"]
-position = Vector2(295, 810)
-scale = Vector2(2.17857, 2.17857)
-texture = ExtResource("5_4c57u")
 
 [node name="Headarena" type="Button" parent="UI/enterance"]
 offset_left = 109.0
@@ -188,6 +202,62 @@ theme_override_styles/normal = ExtResource("4_2cqfq")
 text = "Enter the instance and
  head to the arena"
 
+[node name="warrpath" type="Path2D" parent="UI/enterance"]
+curve = SubResource("Curve2D_0odxb")
+
+[node name="warrmover" type="PathFollow2D" parent="UI/enterance/warrpath"]
+position = Vector2(142.941, 584.23)
+rotation = -0.0644268
+progress = 11.92
+
+[node name="warr" type="Sprite2D" parent="UI/enterance/warrpath/warrmover"]
+position = Vector2(1.44863, -6.92108)
+rotation = 0.0644269
+scale = Vector2(2.17857, 2.17857)
+texture = ExtResource("5_4c57u")
+
+[node name="Label2" type="Label" parent="UI/enterance/warrpath/warrmover/warr"]
+offset_left = -87.1862
+offset_top = -55.6464
+offset_right = 88.8138
+offset_bottom = -6.64647
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Durkur
+<MULGORE MILKERS>"
+horizontal_alignment = 1
+
+[node name="dur" type="Timer" parent="UI/enterance"]
+
+[node name="shampath" type="Path2D" parent="UI/enterance"]
+curve = SubResource("Curve2D_lswn8")
+
+[node name="shammover" type="PathFollow2D" parent="UI/enterance/shampath"]
+position = Vector2(126, 742)
+rotation = -0.565484
+
+[node name="sham" type="Sprite2D" parent="UI/enterance/shampath/shammover"]
+position = Vector2(-71.8329, 25.476)
+rotation = 0.574305
+scale = Vector2(2.26339, 2.20023)
+texture = ExtResource("6_efxa6")
+
+[node name="Label" type="Label" parent="UI/enterance/shampath/shammover/sham"]
+offset_left = -91.4937
+offset_top = -55.5296
+offset_right = 84.5063
+offset_bottom = -6.52969
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Divthediv
+<MULGORE MILKERS>"
+horizontal_alignment = 1
+
+[node name="run" type="AudioStreamPlayer" parent="UI/enterance"]
+stream = ExtResource("13_xuqvo")
+
 [node name="arenadwarf" type="Node2D" parent="UI" node_paths=PackedStringArray("user_interface")]
 visible = false
 script = ExtResource("13_ryguw")
@@ -199,15 +269,56 @@ position = Vector2(151.375, 811.644)
 scale = Vector2(2.26339, 2.20023)
 texture = ExtResource("6_efxa6")
 
+[node name="Label" type="Label" parent="UI/arenadwarf/sham2"]
+offset_left = -91.8976
+offset_top = -56.3577
+offset_right = 84.1024
+offset_bottom = -7.35775
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Divthediv
+<MULGORE MILKERS>"
+horizontal_alignment = 1
+
 [node name="portal2" type="Sprite2D" parent="UI/arenadwarf"]
 position = Vector2(515, 595)
 scale = Vector2(0.501743, 0.524584)
 texture = ExtResource("7_vivmo")
 
+[node name="Sprite2D" type="Sprite2D" parent="UI/arenadwarf/portal2"]
+visible = false
+position = Vector2(-478.333, -394.598)
+texture = ExtResource("22_0odxb")
+flip_h = true
+
+[node name="Label" type="Label" parent="UI/arenadwarf/portal2/Sprite2D"]
+offset_left = -265.076
+offset_top = -78.1572
+offset_right = 220.924
+offset_bottom = 16.8428
+theme_override_colors/font_color = Color(0.67, 0, 0.0111665, 1)
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 89
+text = "Good riddance!"
+horizontal_alignment = 1
+
 [node name="warr2" type="Sprite2D" parent="UI/arenadwarf"]
-position = Vector2(295, 810)
+position = Vector2(358, 845)
 scale = Vector2(2.17857, 2.17857)
 texture = ExtResource("5_4c57u")
+
+[node name="warrname" type="Label" parent="UI/arenadwarf/warr2"]
+offset_left = -88.5902
+offset_top = -55.082
+offset_right = 87.4098
+offset_bottom = -6.08204
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Durkur
+<MULGORE MILKERS>"
+horizontal_alignment = 1
 
 [node name="startencounter" type="Button" parent="UI/arenadwarf"]
 offset_left = 118.0
@@ -220,6 +331,9 @@ theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = ExtResource("4_2cqfq")
 text = "Start the encounter"
 
+[node name="offwith" type="AudioStreamPlayer" parent="UI/arenadwarf"]
+stream = ExtResource("17_qsp4k")
+
 [node name="trash" type="Node2D" parent="UI" node_paths=PackedStringArray("user_interface")]
 visible = false
 script = ExtResource("15_d13ii")
@@ -229,7 +343,7 @@ user_interface = NodePath("..")
 [node name="enemy1" type="Sprite2D" parent="UI/trash"]
 position = Vector2(372, 484)
 scale = Vector2(0.486801, 0.486801)
-texture = ExtResource("4_kek77")
+texture = SubResource("ImageTexture_1u8w0")
 
 [node name="enemy2" type="Sprite2D" parent="UI/trash"]
 position = Vector2(186, 578)
@@ -243,11 +357,13 @@ scale = Vector2(0.486801, 0.486801)
 texture = ExtResource("4_kek77")
 
 [node name="shamhwefect" type="Sprite2D" parent="UI/trash"]
+visible = false
 position = Vector2(365, 622)
 scale = Vector2(2.15625, 1.73819)
 texture = ExtResource("9_2cqfq")
 
 [node name="warrwweffect" type="Sprite2D" parent="UI/trash"]
+visible = false
 position = Vector2(359, 658)
 scale = Vector2(2.89063, 2.08194)
 texture = ExtResource("10_yaehf")
@@ -257,17 +373,43 @@ position = Vector2(368, 652)
 scale = Vector2(2.17857, 2.17857)
 texture = ExtResource("5_4c57u")
 
+[node name="warrname" type="Label" parent="UI/trash/warr"]
+offset_left = -88.5902
+offset_top = -55.082
+offset_right = 87.4098
+offset_bottom = -6.08204
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Durkur
+<MULGORE MILKERS>"
+horizontal_alignment = 1
+
 [node name="sham" type="Sprite2D" parent="UI/trash"]
 position = Vector2(118, 933)
 scale = Vector2(1.91964, 1.86607)
 texture = ExtResource("6_efxa6")
 
+[node name="Label" type="Label" parent="UI/trash/sham"]
+offset_left = -91.8976
+offset_top = -56.3577
+offset_right = 84.1024
+offset_bottom = -7.35775
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Divthediv
+<MULGORE MILKERS>"
+horizontal_alignment = 1
+
 [node name="shamhw" type="Sprite2D" parent="UI/trash"]
+visible = false
 position = Vector2(186, 862)
 scale = Vector2(1.40625, 1.36701)
 texture = ExtResource("7_dg77c")
 
 [node name="warrww" type="Sprite2D" parent="UI/trash"]
+visible = false
 position = Vector2(431, 578)
 scale = Vector2(1.40625, 1.36701)
 texture = ExtResource("8_ycdy4")
@@ -283,7 +425,17 @@ theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = ExtResource("4_2cqfq")
 text = "Kill the trash"
 
+[node name="hwcast" type="AudioStreamPlayer" parent="UI/trash"]
+stream = ExtResource("24_htxhm")
+
+[node name="hwland" type="AudioStreamPlayer" parent="UI/trash"]
+stream = ExtResource("25_jq2sk")
+
+[node name="wwcast" type="AudioStreamPlayer" parent="UI/trash"]
+stream = ExtResource("26_4k2k6")
+
 [node name="boss" type="Node2D" parent="UI" node_paths=PackedStringArray("user_interface")]
+visible = false
 script = ExtResource("21_1u8w0")
 view = 5
 user_interface = NodePath("..")
@@ -293,27 +445,99 @@ position = Vector2(118, 933)
 scale = Vector2(1.91964, 1.86607)
 texture = ExtResource("6_efxa6")
 
+[node name="Label" type="Label" parent="UI/boss/sham"]
+offset_left = -91.8976
+offset_top = -56.3577
+offset_right = 84.1024
+offset_bottom = -7.35775
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Divthediv
+<MULGORE MILKERS>"
+horizontal_alignment = 1
+
+[node name="lego" type="Sprite2D" parent="UI/boss/sham"]
+position = Vector2(154.092, -32.4211)
+scale = Vector2(0.369314, 0.224402)
+texture = ExtResource("22_0odxb")
+
+[node name="lego" type="Label" parent="UI/boss/sham/lego"]
+offset_left = -243.742
+offset_top = -81.6358
+offset_right = 291.258
+offset_bottom = 97.3642
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 82
+text = "Let's FUCKING
+goooo!"
+horizontal_alignment = 1
+
+[node name="drop" type="Label" parent="UI/boss/sham/lego"]
+visible = false
+offset_left = -450.0
+offset_top = -194.0
+offset_right = 510.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 51
+text = "Oh my 
+FUCKING GOD, 
+ITS HEREEEEE
+LETSGOOOO 
+BROTHER <333333"
+horizontal_alignment = 1
+
 [node name="boss" type="Sprite2D" parent="UI/boss"]
 position = Vector2(395, 543)
 scale = Vector2(0.891199, 0.891199)
 texture = ExtResource("9_w48qg")
 
 [node name="shamhwefect" type="Sprite2D" parent="UI/boss"]
+visible = false
 position = Vector2(184, 702)
 scale = Vector2(2.15625, 1.73819)
 texture = ExtResource("9_2cqfq")
+
+[node name="warrmsefect" type="Sprite2D" parent="UI/boss"]
+visible = false
+position = Vector2(184, 702)
+scale = Vector2(2.15625, 1.73819)
+texture = ExtResource("10_yaehf")
 
 [node name="warr" type="Sprite2D" parent="UI/boss"]
 position = Vector2(194, 718)
 scale = Vector2(2.17857, 2.17857)
 texture = ExtResource("5_4c57u")
 
+[node name="warrname" type="Label" parent="UI/boss/warr"]
+offset_left = -88.5902
+offset_top = -55.082
+offset_right = 87.4098
+offset_bottom = -6.08204
+theme_override_colors/font_color = Color(0.272664, 0.56501, 0.286825, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+theme_override_font_sizes/font_size = 11
+text = "Durkur
+<MULGORE MILKERS>"
+horizontal_alignment = 1
+
 [node name="warrms" type="Sprite2D" parent="UI/boss"]
+visible = false
 position = Vector2(249, 654)
 scale = Vector2(1.40625, 1.36701)
 texture = ExtResource("14_074og")
 
+[node name="warrexe" type="Sprite2D" parent="UI/boss"]
+visible = false
+position = Vector2(249, 654)
+scale = Vector2(1.40625, 1.36701)
+texture = ExtResource("30_0rl1p")
+
 [node name="shamhw" type="Sprite2D" parent="UI/boss"]
+visible = false
 position = Vector2(186, 862)
 scale = Vector2(1.40625, 1.36701)
 texture = ExtResource("7_dg77c")
@@ -351,6 +575,66 @@ theme_override_fonts/font = ExtResource("3_lquwl")
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = ExtResource("4_2cqfq")
 text = "Kill the boss"
+
+[node name="lootframe" type="Sprite2D" parent="UI/boss"]
+visible = false
+position = Vector2(352, 276)
+scale = Vector2(2.28899, 2.28899)
+texture = ExtResource("26_lswn8")
+
+[node name="looticon" type="Sprite2D" parent="UI/boss/lootframe"]
+position = Vector2(-67.9439, 0.208419)
+scale = Vector2(0.632265, 0.632265)
+texture = ExtResource("27_a6jrf")
+
+[node name="lootname" type="Label" parent="UI/boss/lootframe"]
+offset_left = -39.3186
+offset_top = -16.1643
+offset_right = 99.6814
+offset_bottom = 16.8357
+theme_override_colors/font_color = Color(0.179553, 0.238333, 0.876118, 1)
+theme_override_fonts/font = ExtResource("6_yaehf")
+text = "Caster 
+pre-BiS belt"
+
+[node name="yay" type="ColorRect" parent="UI/boss"]
+visible = false
+offset_left = 25.0
+offset_top = 326.0
+offset_right = 682.0
+offset_bottom = 593.0
+color = Color(0.16257, 0.0306, 0.18, 0)
+
+[node name="yaytext" type="Label" parent="UI/boss/yay"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 84.0
+offset_right = 575.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0.94, 0.6298, 0.85728, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 27
+text = "Congratulations, <value>!
+You've done it! The grind is over!
+
+Please mind that the number of tries You got 
+is an official prediction of Div 
+for You dropping SGC in game.
+Love, ~Div"
+horizontal_alignment = 1
+
+[node name="hwcast" type="AudioStreamPlayer" parent="UI/boss"]
+stream = ExtResource("24_htxhm")
+
+[node name="hwland" type="AudioStreamPlayer" parent="UI/boss"]
+stream = ExtResource("25_jq2sk")
+
+[node name="ms" type="AudioStreamPlayer" parent="UI/boss"]
+stream = ExtResource("34_ok6jj")
+
+[node name="exe" type="AudioStreamPlayer" parent="UI/boss"]
+stream = ExtResource("35_facbu")
 
 [connection signal="pressed" from="UI/welcome/letsgoo" to="UI/welcome" method="_on_letsgoo_pressed"]
 [connection signal="pressed" from="UI/whatname/startgrind" to="UI/whatname" method="_on_startgrind_pressed"]
